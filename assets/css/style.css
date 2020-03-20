@@ -46,12 +46,25 @@ header {
         float: none; } }
     header > nav > ul {
       display: flex;
-      list-style: none; }
+      list-style: none;
+      padding: 0; }
       @media only screen and (max-width: 767px) {
         header > nav > ul {
-          justify-content: center; } }
+          justify-content: center;
+          margin: 0; } }
       header > nav > ul > li {
         margin-left: 50px; }
+        @media only screen and (max-width: 767px) {
+          header > nav > ul > li {
+            margin: 15px; } }
+
+.btn {
+  padding: 15px;
+  color: #fff;
+  background-color: #000;
+  text-align: center;
+  transition: ease-in-out .2s;
+  cursor: pointer; }
 
 footer {
   width: 100%;
@@ -70,7 +83,10 @@ footer {
   footer > p {
     text-align: center; }
     footer > p > i {
-      color: #e83737; }
+      color: #e83737;
+      transition: ease-in-out .2s; }
+      footer > p > i:hover {
+        transform: scale(1.2); }
 
 .panorama {
   width: 100%;
@@ -94,7 +110,7 @@ footer {
     .produits > .produit-field {
       width: 100%;
       float: none; } }
-  .produits > .produit-field > .produit {
+  .produits > .produit-field > a > .produit {
     width: 95%;
     border: solid 1px #f0f0f0;
     height: 200px;
@@ -102,15 +118,15 @@ footer {
     display: flex;
     transition: ease-in-out .2s; }
     @media only screen and (max-width: 767px) {
-      .produits > .produit-field > .produit {
+      .produits > .produit-field > a > .produit {
         display: block;
         width: 100%;
         border-top: none;
         height: auto; } }
-    .produits > .produit-field > .produit:hover {
+    .produits > .produit-field > a > .produit:hover {
       opacity: 0.7;
       cursor: pointer; }
-    .produits > .produit-field > .produit > .produit-photo {
+    .produits > .produit-field > a > .produit > .produit-photo {
       height: 200px;
       width: 50%;
       background: #f0f0f0;
@@ -118,27 +134,116 @@ footer {
       background-size: 180%;
       background-position: center; }
       @media only screen and (max-width: 767px) {
-        .produits > .produit-field > .produit > .produit-photo {
+        .produits > .produit-field > a > .produit > .produit-photo {
           width: 100%; } }
-    .produits > .produit-field > .produit > .produit-informations {
+    .produits > .produit-field > a > .produit > .produit-informations {
       max-height: 200px;
       width: 50%;
       padding: 15px;
       list-style: none; }
       @media only screen and (max-width: 767px) {
-        .produits > .produit-field > .produit > .produit-informations {
-          width: 100%;
+        .produits > .produit-field > a > .produit > .produit-informations {
+          width: auto;
           margin-top: 0; } }
-      .produits > .produit-field > .produit > .produit-informations > .nom {
+      .produits > .produit-field > a > .produit > .produit-informations > .nom {
         font-size: 18px;
         padding: 0;
         margin: 0;
         margin-bottom: 10px; }
-      .produits > .produit-field > .produit > .produit-informations > .desc {
+      .produits > .produit-field > a > .produit > .produit-informations > .desc {
         font-size: 15px;
         color: #3e3e3e;
         padding: 0;
         margin: 0;
         margin-bottom: 10px; }
+
+.produit-page {
+  width: 100%;
+  display: flex; }
+  @media only screen and (max-width: 767px) {
+    .produit-page {
+      display: block; } }
+  .produit-page > .produit-photo {
+    max-width: 50%; }
+    @media only screen and (max-width: 767px) {
+      .produit-page > .produit-photo {
+        max-width: 100%; } }
+  .produit-page > .prix {
+    padding: 15px;
+    background: #fff;
+    color: #000;
+    text-align: center;
+    position: absolute;
+    right: calc(50% + 10px);
+    margin-top: 10px; }
+    .produit-page > .prix:hover {
+      opacity: 0.7;
+      transition: ease-in-out .2s; }
+    @media only screen and (max-width: 767px) {
+      .produit-page > .prix {
+        right: calc(5% + 10px); } }
+  .produit-page > .produit-informations {
+    width: 50%;
+    padding: 15px;
+    position: relative; }
+    @media only screen and (max-width: 767px) {
+      .produit-page > .produit-informations {
+        width: auto;
+        padding: 0;
+        margin-top: 20px; } }
+    .produit-page > .produit-informations > h2 {
+      margin: 0;
+      padding: 0; }
+    .produit-page > .produit-informations > p {
+      margin-bottom: 15px;
+      margin-top: 10px;
+      padding: 0; }
+    .produit-page > .produit-informations > .desc {
+      color: #3e3e3e; }
+    .produit-page > .produit-informations > form {
+      position: absolute;
+      bottom: 0px;
+      width: 100%; }
+      @media only screen and (max-width: 767px) {
+        .produit-page > .produit-informations > form {
+          position: relative;
+          width: auto;
+          margin-top: 50px; } }
+      .produit-page > .produit-informations > form > select {
+        margin-bottom: 10px;
+        width: 100%;
+        border: solid 1px #000;
+        background: #fff;
+        padding: 10px; }
+      .produit-page > .produit-informations > form > .btn {
+        width: auto; }
+
+.modal {
+  position: fixed;
+  background: #0000008f;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  display: none; }
+  .modal .fa-times {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: #000;
+    cursor: pointer; }
+  .modal > .notification {
+    width: 300px;
+    padding: 50px;
+    background: #fff;
+    text-align: center;
+    margin: 350px auto;
+    position: relative; }
+    @media only screen and (max-width: 767px) {
+      .modal > .notification {
+        width: 60%; } }
 
 /*# sourceMappingURL=style.css.map */

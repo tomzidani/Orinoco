@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Orinoco</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, user-scalable=no">
+		<link rel="icon" type="image/png" href="./assets/img/favicon.ico">
+		<link rel="stylesheet" type="text/css" href="./assets/css/style.css">
+		<script src="https://kit.fontawesome.com/a8264338ad.js" crossorigin="anonymous"></script>
+	</head>
+	<body>
+
+		<!-- Notification -->
+		<div class="modal" id="modal">
+			<div class="notification">
+				<i class="fas fa-times" id="fermer"></i>
+				<span id="notification">L'article a été ajouté au panier</span>
+			</div>
+		</div>
+
+		<div class="contenu">
+
+			<!-- Header de la page -->
+			<header>
+				<h1><i class="fas fa-camera-retro"></i> Orinoco</h1>
+				<nav>
+					<ul>
+						<li><a href="./index.html">Accueil</a></li>
+						<li><a href="./panier.html">Panier</a></li>
+					</ul>
+				</nav>
+			</header>
+
+			<!-- Produit -->
+			<div class="produit-page">
+
+				<!-- Photo du produit -->
+				<img src="./images/vcam_1.jpg" class="produit-photo">
+
+				<!-- Prix du produit -->
+				<span class="prix">100€</span>
+
+				<!-- Informations du produit -->
+				<div class="produit-informations">
+					<h2>Nom de l'appareil photo</h2>
+					<p class="lentille">Lentilles: 10mm, 50mm</p>
+					<p class="desc">Longue description de l'appareil photo</p>
+
+					<!-- Formulaire du produit -->
+					<form>
+						<label for="lentille">Couleur de la lentille:</label>
+						<select id="lentille">
+							<option>Noir</option>
+							<option>Violet</option>
+							<option>Bleu</option>
+							<option>Vert</option>
+							<option>Jaune</option>
+							<option>Rouge</option>
+							<option>Rose</option>
+							<option>Blanc</option>
+						</select>
+						<div class="btn" onclick="Notification('Bonjour')">Ajouter au panier</div>
+					</form>
+
+				</div>
+			</div>
+
+			<!-- Footer -->
+			<footer>
+				<ul>
+					<li><a href="mailto:tom.zidani@gmail.com">Nous contacter</a></li>
+					<li><a href="https://www.doubs.cci.fr/sites/default/files/doubs/Dev_votre_entrep/commerce/numerique/cles-num-2016/07-Modele-CGU.pdf" target="_blank">CGU</a></li>
+					<li><a href="https://www.araplpic.org/files/source/TEXTES-OFFICIELS/ML.pdf" target="_blank">Mentions légales</a></li>
+				</ul>
+				<p>Réalisé avec <i class="fas fa-heart"></i> par Tom Zidani</p>
+			</footer>
+
+		</div>
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
+		<script type="text/javascript" src="./assets/js/produit.js"></script>
+		<script type="text/javascript" src="./assets/js/modal.js"></script>		
+	</body>
+</html>
