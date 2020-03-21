@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Orinoco</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, user-scalable=no">
+		<link rel="icon" type="image/png" href="./assets/img/favicon.ico">
+		<link rel="stylesheet" type="text/css" href="./assets/css/style.css">
+		<script src="https://kit.fontawesome.com/a8264338ad.js" crossorigin="anonymous"></script>
+	</head>
+	<body>
+
+		<div class="modal">
+			<div class="formulaire-panier">
+				<i class="fas fa-times" id="fermer"></i>
+				<h3>Confirmer la commande</h3>
+				<form>
+						<label for="prenom">Prénom</label>
+						<input type="text" id="prenom" class="input-text">
+						<label for="prenom">Nom</label>
+						<input type="text" id="prenom" class="input-text">
+						<label for="mail">Adresse e-mail</label>
+						<input type="text" id="mail" class="input-text">		
+						<label for="adresse">Adresse postale</label>
+						<input type="text" id="adresse" class="input-text">
+						<label for="code">Code postal</label>
+						<input type="text" id="code" class="input-text">	
+						<label for="ville">Ville</label>
+						<input type="text" id="ville" class="input-text">	
+						<div class="btn">Confirmer</div>																				
+				</form>
+			</div>
+		</div>
+
+		<div class="contenu">
+
+			<!-- Header de la page -->
+			<header>
+				<h1><i class="fas fa-camera-retro"></i> Orinoco</h1>
+				<nav>
+					<ul>
+						<li><a href="./index.html">Accueil</a></li>
+						<li><a href="./panier.html">Panier</a></li>
+					</ul>
+				</nav>
+			</header>
+
+			<div class="panier">
+				<h2>Mon panier</h2>
+
+				<div class="produit-panier">
+					<img src="./images/vcam_1.jpg" class="produit-image">
+					<div class="produit-informations">
+						<h3>Nom de l'appareil photo</h3>
+						<p>150€</p>
+						<p>Quantité: 3</p>
+						<div class="btn">Retirer l'article</div>
+					</div>
+				</div>
+
+				<div class="commande-panier">
+					<p class="total-panier">Total: 1550€</p>
+					<div class="btn">Valider mon panier</div>
+				</div>
+
+			</div>
+
+			<!-- Footer -->
+			<footer>
+				<ul>
+					<li><a href="mailto:tom.zidani@gmail.com">Nous contacter</a></li>
+					<li><a href="https://www.doubs.cci.fr/sites/default/files/doubs/Dev_votre_entrep/commerce/numerique/cles-num-2016/07-Modele-CGU.pdf" target="_blank">CGU</a></li>
+					<li><a href="https://www.araplpic.org/files/source/TEXTES-OFFICIELS/ML.pdf" target="_blank">Mentions légales</a></li>
+				</ul>
+				<p>Réalisé avec <i class="fas fa-heart"></i> par Tom Zidani</p>
+			</footer>
+
+		</div>
+	</body>
+</html>

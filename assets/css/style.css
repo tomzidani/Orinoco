@@ -245,5 +245,70 @@ footer {
     @media only screen and (max-width: 767px) {
       .modal > .notification {
         width: 60%; } }
+  .modal > .formulaire-panier {
+    width: 400px;
+    padding: 15px;
+    background: #fff;
+    margin: 0 auto;
+    margin-top: 150px;
+    position: relative; }
+    @media only screen and (max-width: 767px) {
+      .modal > .formulaire-panier {
+        width: 300px; } }
+    .modal > .formulaire-panier > h3 {
+      padding: 0;
+      margin: 0;
+      text-align: center; }
+    .modal > .formulaire-panier .input-text {
+      padding: 7px;
+      border: solid 1px #000;
+      width: 100%;
+      box-sizing: border-box;
+      margin-bottom: 10px;
+      font-size: 16px; }
+
+.panier > .produit-panier {
+  display: flex;
+  border-bottom: solid 1px #f0f0f0;
+  padding: 15px; }
+  @media only screen and (max-width: 767px) {
+    .panier > .produit-panier {
+      display: block; } }
+  .panier > .produit-panier > .produit-image {
+    max-width: 225px; }
+    @media only screen and (max-width: 767px) {
+      .panier > .produit-panier > .produit-image {
+        max-width: 100%; } }
+  .panier > .produit-panier > .produit-informations {
+    padding-left: 15px;
+    position: relative; }
+    @media only screen and (max-width: 767px) {
+      .panier > .produit-panier > .produit-informations {
+        padding: 0; } }
+    .panier > .produit-panier > .produit-informations > h3 {
+      padding: 0;
+      margin: 0;
+      font-size: 20px; }
+    .panier > .produit-panier > .produit-informations > p {
+      margin-bottom: 10px;
+      margin: 0; }
+    .panier > .produit-panier > .produit-informations > .btn {
+      position: absolute;
+      bottom: 0px;
+      padding: 10px;
+      font-size: 15px; }
+      @media only screen and (max-width: 767px) {
+        .panier > .produit-panier > .produit-informations > .btn {
+          position: relative;
+          margin-top: 20px; } }
+.panier > .commande-panier {
+  margin-top: 30px;
+  text-align: center; }
+  .panier > .commande-panier > .total-panier {
+    font-size: 18px;
+    margin: 0;
+    margin-bottom: 15px; }
+  .panier > .commande-panier > .btn {
+    padding: 10px; }
 
 /*# sourceMappingURL=style.css.map */

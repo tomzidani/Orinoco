@@ -131,5 +131,39 @@ footer{
 		width: 300px; padding: 50px; background: #fff; text-align: center;  margin: 350px auto; position: relative;
 		@include mobile{width: 60%;}
 	}
+	> .formulaire-panier{
+		width: 400px; padding: 15px; background: #fff; margin: 0 auto; margin-top: 150px; position: relative;
+		@include mobile{width: 300px;}
+		> h3{padding: 0; margin: 0; text-align: center;}
+		.input-text{padding: 7px; border: solid 1px #000; width: 100%; box-sizing: border-box; margin-bottom: 10px; font-size: 16px;}
+	}
+}
+
+// Panier
+.panier{
+	> .produit-panier{
+		display: flex; border-bottom: solid 1px #f0f0f0; padding: 15px;
+		@include mobile{display: block;}
+		> .produit-image{
+			max-width: 225px;
+			@include mobile{max-width: 100%;}
+		}
+		> .produit-informations{
+			padding-left: 15px; position: relative;
+			@include mobile{padding: 0;}
+			> h3 {padding: 0; margin: 0; font-size: 20px;}
+			> p{margin-bottom: 10px; margin: 0;}
+			> .btn{
+				position: absolute; bottom: 0px; padding: 10px; font-size: 15px;
+				@include mobile{position: relative; margin-top: 20px;}
+			}
+		}
+	}
+
+	> .commande-panier{
+		margin-top: 30px; text-align: center;
+		> .total-panier{font-size: 18px; margin: 0; margin-bottom: 15px}
+		> .btn{padding: 10px;}
+	}
 }
 
