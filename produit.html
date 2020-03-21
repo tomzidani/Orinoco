@@ -10,12 +10,36 @@
 	</head>
 	<body>
 
-		<!-- Notification -->
+
+		<!-- Modal -->
 		<div class="modal" id="modal">
-			<div class="notification">
-				<i class="fas fa-times" id="fermer"></i>
-				<span id="notification">L'article a été ajouté au panier</span>
+
+			<!-- Formulaire -->
+			<div class="formulaire-panier" id="formulaire">
+				<i class="fas fa-times" id="fermer-form"></i>
+				<h3>Confirmer la commande</h3>
+				<form>
+						<label for="prenom">Prénom</label>
+						<input type="text" id="prenom" class="input-text">
+						<label for="prenom">Nom</label>
+						<input type="text" id="prenom" class="input-text">
+						<label for="mail">Adresse e-mail</label>
+						<input type="text" id="mail" class="input-text">		
+						<label for="adresse">Adresse postale</label>
+						<input type="text" id="adresse" class="input-text">
+						<label for="code">Code postal</label>
+						<input type="text" id="code" class="input-text">	
+						<label for="ville">Ville</label>
+						<input type="text" id="ville" class="input-text">	
+						<div class="btn">Confirmer</div>																				
+				</form>
 			</div>
+
+			<!-- Notification -->
+			<div class="notification" id="notification">
+				<i class="fas fa-times" id="fermer-notif"></i>
+				<span id="notificationTexte"></span>
+			</div>			
 		</div>
 
 		<div class="contenu">
@@ -35,16 +59,16 @@
 			<div class="produit-page">
 
 				<!-- Photo du produit -->
-				<img src="./images/vcam_1.jpg" class="produit-photo">
+				<img class="produit-photo" id="photo">
 
 				<!-- Prix du produit -->
-				<span class="prix">100€</span>
+				<span class="prix" id="prix">100€</span>
 
 				<!-- Informations du produit -->
 				<div class="produit-informations">
 					<h2>Nom de l'appareil photo</h2>
-					<p class="lentille">Lentilles: 10mm, 50mm</p>
-					<p class="desc">Longue description de l'appareil photo</p>
+					<p class="lentille" id="lentilles">Lentilles: 10mm, 50mm</p>
+					<p class="desc" id="desc">Longue description de l'appareil photo</p>
 
 					<!-- Formulaire du produit -->
 					<form>
@@ -59,7 +83,7 @@
 							<option>Rose</option>
 							<option>Blanc</option>
 						</select>
-						<div class="btn" onclick="Notification('Bonjour')">Ajouter au panier</div>
+						<div class="btn" id="panier">Ajouter au panier</div>
 					</form>
 
 				</div>
@@ -76,8 +100,10 @@
 			</footer>
 
 		</div>
+
 		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
-		<script type="text/javascript" src="./assets/js/produit.js"></script>
-		<script type="text/javascript" src="./assets/js/modal.js"></script>		
+		<script type="text/javascript" src="./assets/js/connexion.js"></script>
+		<script type="text/javascript" src="./assets/js/modal.js"></script>	
+		<script type="text/javascript" src="./assets/js/produit.js"></script>			
 	</body>
 </html>

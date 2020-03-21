@@ -10,9 +10,12 @@
 	</head>
 	<body>
 
-		<div class="modal">
-			<div class="formulaire-panier">
-				<i class="fas fa-times" id="fermer"></i>
+		<!-- Modal -->
+		<div class="modal" id="modal">
+
+			<!-- Formulaire -->
+			<div class="formulaire-panier" id="formulaire">
+				<i class="fas fa-times" id="fermer-form"></i>
 				<h3>Confirmer la commande</h3>
 				<form>
 						<label for="prenom">Prénom</label>
@@ -23,13 +26,17 @@
 						<input type="text" id="mail" class="input-text">		
 						<label for="adresse">Adresse postale</label>
 						<input type="text" id="adresse" class="input-text">
-						<label for="code">Code postal</label>
-						<input type="text" id="code" class="input-text">	
 						<label for="ville">Ville</label>
 						<input type="text" id="ville" class="input-text">	
 						<div class="btn">Confirmer</div>																				
 				</form>
 			</div>
+
+			<!-- Notification -->
+			<div class="notification" id="notification">
+				<i class="fas fa-times" id="fermer-notif"></i>
+				<span id="notificationTexte"></span>
+			</div>			
 		</div>
 
 		<div class="contenu">
@@ -47,20 +54,11 @@
 
 			<div class="panier">
 				<h2>Mon panier</h2>
-
-				<div class="produit-panier">
-					<img src="./images/vcam_1.jpg" class="produit-image">
-					<div class="produit-informations">
-						<h3>Nom de l'appareil photo</h3>
-						<p>150€</p>
-						<p>Quantité: 3</p>
-						<div class="btn">Retirer l'article</div>
-					</div>
+				<div id="panier">
 				</div>
-
 				<div class="commande-panier">
-					<p class="total-panier">Total: 1550€</p>
-					<div class="btn">Valider mon panier</div>
+					<p class="total-panier" id="total"></p>
+					<div class="btn" id="valider">Valider mon panier</div>
 				</div>
 
 			</div>
@@ -76,5 +74,10 @@
 			</footer>
 
 		</div>
+
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
+		<script type="text/javascript" src="./assets/js/connexion.js"></script>
+		<script type="text/javascript" src="./assets/js/modal.js"></script>
+		<script type="text/javascript" src="./assets/js/panier.js"></script>
 	</body>
 </html>

@@ -47,7 +47,10 @@ header{
 }
 
 // Objets
-.btn{padding: 15px;color: #fff; background-color: #000;text-align: center;transition: ease-in-out .2s;cursor: pointer;}
+.btn{
+	padding: 15px;color: #fff; background-color: #000;text-align: center;transition: ease-in-out .2s;cursor: pointer;
+	&:hover{opacity: 0.7}
+}
 
 
 // Footer
@@ -99,6 +102,15 @@ footer{
 .produit-page{
 	width: 100%; display: flex;
 	@include mobile{display: block;}
+
+	// Message d'erreur
+	> h2.centre{text-align: center; padding: 0; margin: 0;}
+	> p.centre{
+		text-align: center; padding: 0; margin: 0;
+		span{text-decoration: underline;}
+	}
+
+	// Affichage du produit
 	> .produit-photo{
 		max-width: 50%;
 		@include mobile{max-width: 100%;}
@@ -116,6 +128,7 @@ footer{
 		> .desc{color: #3e3e3e;}
 		> form{
 			position: absolute; bottom: 0px; width: 100%;
+			@include tablette {position: relative; width: auto; margin-top: 50px;}
 			@include mobile {position: relative; width: auto; margin-top: 50px;}
 			> select{margin-bottom: 10px; width: 100%; border: solid 1px #000; background: #fff; padding: 10px;}
 			> .btn{width: auto;}
@@ -128,11 +141,11 @@ footer{
 	position: fixed; background: #0000008f; width: 100%; height: 100%; top: 0; left: 0; right: 0; bottom: 0; z-index: 1; display: none;
 	.fa-times{position: absolute; top: 10px; right: 10px; color: #000; cursor: pointer;}
 	> .notification{
-		width: 300px; padding: 50px; background: #fff; text-align: center;  margin: 350px auto; position: relative;
+		width: 300px; padding: 50px; background: #fff; text-align: center;  margin: 350px auto; position: relative; display: none;
 		@include mobile{width: 60%;}
 	}
 	> .formulaire-panier{
-		width: 400px; padding: 15px; background: #fff; margin: 0 auto; margin-top: 150px; position: relative;
+		width: 400px; padding: 15px; background: #fff; margin: 0 auto; margin-top: 150px; position: relative; display: none;
 		@include mobile{width: 300px;}
 		> h3{padding: 0; margin: 0; text-align: center;}
 		.input-text{padding: 7px; border: solid 1px #000; width: 100%; box-sizing: border-box; margin-bottom: 10px; font-size: 16px;}
@@ -141,17 +154,18 @@ footer{
 
 // Panier
 .panier{
-	> .produit-panier{
+	#panier{max-height: 550px; overflow: scroll;}
+	.produit-panier{
 		display: flex; border-bottom: solid 1px #f0f0f0; padding: 15px;
 		@include mobile{display: block;}
-		> .produit-image{
+		> a> .produit-image{
 			max-width: 225px;
 			@include mobile{max-width: 100%;}
 		}
 		> .produit-informations{
-			padding-left: 15px; position: relative;
+			padding-left: 15px; position: relative; width: 100%;
 			@include mobile{padding: 0;}
-			> h3 {padding: 0; margin: 0; font-size: 20px;}
+			a> h3 {padding: 0; margin: 0; font-size: 20px;}
 			> p{margin-bottom: 10px; margin: 0;}
 			> .btn{
 				position: absolute; bottom: 0px; padding: 10px; font-size: 15px;
