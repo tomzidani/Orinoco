@@ -1,5 +1,5 @@
 // Déclaration d'une constante contenant le lien de l'API
-const API = "http://localhost:3000/api/cameras";
+var API = "http://localhost:3000/api/cameras";
 
 // Création d'une fonction de connexion à l'API
 function connexionAPI(fonctionRetour, lien) {

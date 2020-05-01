@@ -15,38 +15,49 @@ var validerBtn = document.getElementById("valider");
 function affichagePanier(data) {
 
 	// Si on a un article dans le panier
-	if(panier){
+	if(panier != null){
+		if(panier.length > 0){
 		
-		// Boucle pour chaque article du panier
-		for(let i = 0; i < panier.length; i++) {
+			// Boucle pour chaque article du panier
+			for(let i = 0; i < panier.length; i++) {
 
 
 
-			// Boucle pour chaque produit
-			for(let t = 0; t < data.length; t++) {
+				// Boucle pour chaque produit
+				for(let t = 0; t < data.length; t++) {
 
-				// Si l'id du produit correspond à l'id de l'article du panier
-				if(panier[i]._id == data[t]._id){
+					// Si l'id du produit correspond à l'id de l'article du panier
+					if(panier[i]._id == data[t]._id){
 
-					// Création du HTML
-					let listePanier = '<div class="produit-panier">';
-					listePanier += '<a href="./produit.html?id='+ data[t]._id +'"><img src="'+ data[t].imageUrl +'" class="produit-image"></a>';
-					listePanier += '<div class="produit-informations">';
-					listePanier += '<h3><a href="./produit.html?id='+ data[t]._id +'">'+ data[t].name +'</a></h3>';
-					listePanier += '<p>'+ data[t].price/100 +'&euro;</p>';
-					listePanier += '<div class="btn" onclick="supprimerProduit(\''+ data[t]._id +'\')">Retirer l\'article</div>';
-					listePanier += '</div></div>';
-					// Insertion du HTML
-					panierDiv.innerHTML += listePanier
+						// Création du HTML
+						let listePanier = '<div class="produit-panier">';
+						listePanier += '<a href="./produit.html?id='+ data[t]._id +'"><img src="'+ data[t].imageUrl +'" class="produit-image"></a>';
+						listePanier += '<div class="produit-informations">';
+						listePanier += '<h3><a href="./produit.html?id='+ data[t]._id +'">'+ data[t].name +'</a></h3>';
+						listePanier += '<p>'+ data[t].price/100 +'&euro;</p>';
+						listePanier += '<div class="btn" onclick="supprimerProduit(\''+ data[t]._id +'\')">Retirer l\'article</div>';
+						listePanier += '</div></div>';
+						// Insertion du HTML
+						panierDiv.innerHTML += listePanier
 
-					// Augmentation du prix total
-					prixTotal += data[t].price;
+						// Augmentation du prix total
+						prixTotal += data[t].price;
+					}
 				}
 			}
-		}
 
-	// Affichage du panier
-	prixTotalDiv.innerHTML = "Total: "+ prixTotal/100 +"&euro;";
+		// Affichage du panier
+		prixTotalDiv.innerHTML = "Total: "+ prixTotal/100 +"&euro;";
+	}
+
+	// Sinon, si le panier est vide, on affiche un message et on retire le bouton
+	else{
+
+		let messageVide = '<p class="centre">Votre panier est tristement vide...</p>';	
+		panierDiv.innerHTML += messageVide;
+		validerBtn.style.display = "none";
+
+	}
 
 	}
 	// Sinon, si le panier est vide, on affiche un message et on retire le bouton
