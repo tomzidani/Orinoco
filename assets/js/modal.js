@@ -46,7 +46,6 @@ function modal(type, message) {
 		}
 		// Ensuite, on affiche la notification
 		formulaireDiv.style.display = "block";
-		console.log("a");
 		$("#modal").fadeIn();
 	}
 }

@@ -279,10 +279,11 @@ footer {
       padding: 0;
       margin: 0;
       text-align: center; }
-    .modal > .formulaire-panier > span.erreur {
+    .modal > .formulaire-panier span {
       color: #e83737;
-      display: none;
-      text-align: center; }
+      text-align: center;
+      margin-left: 10px;
+      font-size: 15px; }
     .modal > .formulaire-panier .input-text {
       padding: 7px;
       border: solid 1px #000;
@@ -290,6 +291,8 @@ footer {
       box-sizing: border-box;
       margin-bottom: 10px;
       font-size: 16px; }
+    .modal > .formulaire-panier input.erreur {
+      border: solid 1px #e83737; }
 
 .panier #panier {
   max-height: 550px;

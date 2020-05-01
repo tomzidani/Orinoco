@@ -1,10 +1,10 @@
-// Connexion à l'API
-connexionAPI(afficherProduit);
-
 // Récupération de l'URL
 let url = window.location.href;
 url = url.split('?id=');
 const id = url[1];
+
+// Connexion à l'API
+connexionAPI(afficherProduit, "http://localhost:3000/api/cameras/"+ id);
 
 // Déclaration des variables
 
@@ -22,9 +22,8 @@ const id = url[1];
 // Affichage des données
 function afficherProduit(data){
 
-	// Récupération du produit voulu en fonction de l'ID de l'URL
-	const informationsProduit = data.filter(item => item._id == id);
-	const produit = informationsProduit[0];
+	// Récupération du produit
+	const produit = data;
 
 	// Si il n'y a pas de produit correspondant à l'ID récupéré
 	if(!produit) {
@@ -73,7 +72,7 @@ function ajouterPanier() {
 	let panier = JSON.parse(localStorage.getItem("panier")) || [];
 
 	// La variable contenant les informations
-	var informationsObjet = {"id": id};
+	var informationsObjet = {"_id": id};
 
 	// Si le panier est vide on stocke simplement les informations du produit dedans
 	if(!panier) {
@@ -82,12 +81,10 @@ function ajouterPanier() {
 
 	// Sinon on ajoute les informations du produit à celles déjà stockées
 	else {
-		console.log(panier);
 		panier.push(informationsObjet);
 		localStorage.setItem("panier", [JSON.stringify(panier)]);
 	}
 	modal("notification", "Article ajouté au panier");
-	console.log(panier);
 }
 
 // Ajout des évènements
