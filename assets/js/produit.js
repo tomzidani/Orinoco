@@ -3,6 +3,11 @@ let url = window.location.href;
 url = url.split('?id=');
 const id = url[1];
 
+// Si aucun produit n'est défini, on retourne a l'accueil
+if(!id){
+	document.location.href = "index.html";
+}
+
 // Connexion à l'API
 connexionAPI(afficherProduit, "http://localhost:3000/api/cameras/"+ id);
 
