@@ -30,7 +30,7 @@ function afficherProduit(data) {
     console.log(data);
 
     // Si il n'y a pas de produit correspondant à l'ID récupéré
-    if (produit.name === 'CastError' || produit === '{ }') {
+    if (produit.name === 'CastError' || produit.name === undefined) {
 
         // Création d'un message d'erreur
         champProduit.style.display = "block";
