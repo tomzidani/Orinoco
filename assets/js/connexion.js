@@ -3,19 +3,20 @@ var API = "http://localhost:3000/api/cameras";
 
 // Création d'une fonction de connexion à l'API
 function connexionAPI(fonctionRetour, lien) {
-	if(lien){ API = lien; }
-	
+	var url = lien ? lien : API;
+
 	return new Promise ((resolve, reject) => {
-		var request = new XMLHttpRequest();
-		request.onreadystatechange = function() {
-		    if (this.readyState == XMLHttpRequest.DONE && this.status == 200) {
-		    	const data = JSON.parse(this.responseText);
-		        fonctionRetour(data);
-		    }
+		const xhr = new XMLHttpRequest();
+		xhr.open("GET", url);
+		xhr.onload = function(){
+			if (this.readyState === XMLHttpRequest.DONE && this.status === 200){
+				resolve(fonctionRetour(JSON.parse(this.responseText)));
+			}
+			else{
+				reject(this.statusText);
+			}
 		};
-		request.open("GET", API);
-		request.send();
+		xhr.onerror = () => reject(this.statusText);
+		xhr.send();
 	});
-
-
 }
