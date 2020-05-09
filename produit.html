@@ -1,133 +1,124 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<title>Orinoco</title>
+    <head>
+        <title>Orinoco</title>
 
-		<!-- Meta -->
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<meta name="title" content="Orinoco">
-		<meta name="description" content="La vente n°1 en Europe sur une sélection d'appareils photos vintage à petits prix.">
+        <!-- Meta -->
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="title" content="Orinoco" />
+        <meta name="description" content="La vente n°1 en Europe sur une sélection d'appareils photos vintage à petits prix." />
 
-		<!-- Open Graph / Facebook -->
-		<meta property="og:type" content="website">
-		<meta property="og:url" content="https://tomzidani.github.io/Orinoco/index.html">
-		<meta property="og:title" content="Orinoco">
-		<meta property="og:description" content="La vente n°1 en Europe sur une sélection d'appareils photos vintage à petits prix.">
-		<meta property="og:image" content="./assets/img/panorama.png">
+        <!-- Open Graph / Facebook -->
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://tomzidani.github.io/Orinoco/index.html" />
+        <meta property="og:title" content="Orinoco" />
+        <meta property="og:description" content="La vente n°1 en Europe sur une sélection d'appareils photos vintage à petits prix." />
+        <meta property="og:image" content="./assets/img/panorama.png" />
 
-		<!-- Twitter -->
-		<meta property="twitter:card" content="summary_large_image">
-		<meta property="twitter:url" content="https://tomzidani.github.io/Orinoco/index.html">
-		<meta property="twitter:title" content="Orinoco">
-		<meta property="twitter:description" content="La vente n°1 en Europe sur une sélection d'appareils photos vintage à petits prix.">
-		<meta property="twitter:image" content="./assets/img/panorama.png">
+        <!-- Twitter -->
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:url" content="https://tomzidani.github.io/Orinoco/index.html" />
+        <meta property="twitter:title" content="Orinoco" />
+        <meta property="twitter:description" content="La vente n°1 en Europe sur une sélection d'appareils photos vintage à petits prix." />
+        <meta property="twitter:image" content="./assets/img/panorama.png" />
 
-		<!-- CSS & Favicon -->
-		<link rel="icon" type="image/png" href="./assets/img/favicon.ico">
-		<link rel="stylesheet" type="text/css" href="./assets/css/style.css">
+        <!-- CSS & Favicon -->
+        <link rel="icon" type="image/png" href="./assets/img/favicon.ico" />
+        <link rel="stylesheet" type="text/css" href="./assets/css/style.css" />
+    </head>
 
-	</head>
+    <body>
+        <!-- Modal -->
+        <div class="modal" id="modal">
+            <!-- Formulaire -->
+            <div class="formulaire-panier" id="formulaire">
+                <i class="fas fa-times" id="fermer-form"></i>
+                <h3>Confirmer la commande</h3>
+                <form>
+                    <label for="prenom">Prénom</label>
+                    <input type="text" id="prenom" class="input-text" />
+                    <label for="nom">Nom</label>
+                    <input type="text" id="nom" class="input-text" />
+                    <label for="mail">Adresse e-mail</label>
+                    <input type="text" id="mail" class="input-text" />
+                    <label for="adresse">Adresse postale</label>
+                    <input type="text" id="adresse" class="input-text" />
+                    <label for="code">Code postal</label>
+                    <input type="text" id="code" class="input-text" />
+                    <label for="ville">Ville</label>
+                    <input type="text" id="ville" class="input-text" />
+                    <div class="btn">Confirmer</div>
+                </form>
+            </div>
 
-	<body>
+            <!-- Notification -->
+            <div class="notification" id="notification">
+                <i class="fas fa-times" id="fermer-notif"></i>
+                <span id="notificationTexte"></span>
+            </div>
+        </div>
 
+        <div class="contenu">
+            <!-- Header de la page -->
+            <header>
+                <h1><i class="fas fa-camera-retro"></i> Orinoco</h1>
+                <nav>
+                    <ul>
+                        <li><a href="./index.html">Accueil</a></li>
+                        <li><a href="./panier.html">Panier</a></li>
+                    </ul>
+                </nav>
+            </header>
 
-		<!-- Modal -->
-		<div class="modal" id="modal">
+            <!-- Produit -->
+            <div class="produit-page">
+                <!-- Photo du produit -->
+                <img class="produit-photo" id="photo" alt="Appareil photo" src="./assets/img/loading.gif" />
 
-			<!-- Formulaire -->
-			<div class="formulaire-panier" id="formulaire">
-				<i class="fas fa-times" id="fermer-form"></i>
-				<h3>Confirmer la commande</h3>
-				<form>
-						<label for="prenom">Prénom</label>
-						<input type="text" id="prenom" class="input-text">
-						<label for="nom">Nom</label>
-						<input type="text" id="nom" class="input-text">
-						<label for="mail">Adresse e-mail</label>
-						<input type="text" id="mail" class="input-text">		
-						<label for="adresse">Adresse postale</label>
-						<input type="text" id="adresse" class="input-text">
-						<label for="code">Code postal</label>
-						<input type="text" id="code" class="input-text">	
-						<label for="ville">Ville</label>
-						<input type="text" id="ville" class="input-text">	
-						<div class="btn">Confirmer</div>																				
-				</form>
-			</div>
+                <!-- Prix du produit -->
+                <span class="prix" id="prix">100€</span>
 
-			<!-- Notification -->
-			<div class="notification" id="notification">
-				<i class="fas fa-times" id="fermer-notif"></i>
-				<span id="notificationTexte"></span>
-			</div>			
-		</div>
+                <!-- Informations du produit -->
+                <div class="produit-informations">
+                    <h2>Nom de l'appareil photo</h2>
+                    <p class="lentille" id="lentilles">Lentilles: 10mm, 50mm</p>
+                    <p class="desc" id="desc">Longue description de l'appareil photo</p>
 
-		<div class="contenu">
+                    <!-- Formulaire du produit -->
+                    <form>
+                        <label for="lentille">Couleur de la lentille:</label>
+                        <select id="lentille">
+                            <option>Noir</option>
+                            <option>Violet</option>
+                            <option>Bleu</option>
+                            <option>Vert</option>
+                            <option>Jaune</option>
+                            <option>Rouge</option>
+                            <option>Rose</option>
+                            <option>Blanc</option>
+                        </select>
+                        <div class="btn" id="panier">Ajouter au panier</div>
+                    </form>
+                </div>
+            </div>
 
-			<!-- Header de la page -->
-			<header>
-				<h1><i class="fas fa-camera-retro"></i> Orinoco</h1>
-				<nav>
-					<ul>
-						<li><a href="./index.html">Accueil</a></li>
-						<li><a href="./panier.html">Panier</a></li>
-					</ul>
-				</nav>
-			</header>
+            <!-- Footer -->
+            <footer>
+                <ul>
+                    <li><a href="mailto:tom.zidani@gmail.com">Nous contacter</a></li>
+                    <li><a href="https://www.doubs.cci.fr/sites/default/files/doubs/Dev_votre_entrep/commerce/numerique/cles-num-2016/07-Modele-CGU.pdf" target="_blank" rel="noreferrer">CGU</a></li>
+                    <li><a href="https://www.araplpic.org/files/source/TEXTES-OFFICIELS/ML.pdf" target="_blank" rel="noreferrer">Mentions légales</a></li>
+                </ul>
+                <p>Réalisé avec <i class="fas fa-heart"></i> par Tom Zidani</p>
+            </footer>
+        </div>
 
-			<!-- Produit -->
-			<div class="produit-page">
-
-				<!-- Photo du produit -->
-				<img class="produit-photo" id="photo" alt="Appareil photo" src="./assets/img/loading.gif">
-
-				<!-- Prix du produit -->
-				<span class="prix" id="prix">100€</span>
-
-				<!-- Informations du produit -->
-				<div class="produit-informations">
-					<h2>Nom de l'appareil photo</h2>
-					<p class="lentille" id="lentilles">Lentilles: 10mm, 50mm</p>
-					<p class="desc" id="desc">Longue description de l'appareil photo</p>
-
-					<!-- Formulaire du produit -->
-					<form>
-						<label for="lentille">Couleur de la lentille:</label>
-						<select id="lentille">
-							<option>Noir</option>
-							<option>Violet</option>
-							<option>Bleu</option>
-							<option>Vert</option>
-							<option>Jaune</option>
-							<option>Rouge</option>
-							<option>Rose</option>
-							<option>Blanc</option>
-						</select>
-						<div class="btn" id="panier">Ajouter au panier</div>
-					</form>
-
-				</div>
-			</div>
-
-			<!-- Footer -->
-			<footer>
-				<ul>
-					<li><a href="mailto:tom.zidani@gmail.com">Nous contacter</a></li>
-					<li><a href="https://www.doubs.cci.fr/sites/default/files/doubs/Dev_votre_entrep/commerce/numerique/cles-num-2016/07-Modele-CGU.pdf" target="_blank" rel="noreferrer">CGU</a></li>
-					<li><a href="https://www.araplpic.org/files/source/TEXTES-OFFICIELS/ML.pdf" target="_blank" rel="noreferrer">Mentions légales</a></li>
-				</ul>
-				<p>Réalisé avec <i class="fas fa-heart"></i> par Tom Zidani</p>
-			</footer>
-
-		</div>
-
-		<!-- Scripts -->
-		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
-		<script type="text/javascript" src="./assets/js/connexion.js"></script>
-		<script type="text/javascript" src="./assets/js/modal.js"></script>	
-		<script type="text/javascript" src="./assets/js/produit.js"></script>
-		<script src="https://kit.fontawesome.com/a8264338ad.js" crossorigin="anonymous"></script>
-
-	</body>
+        <!-- Scripts -->
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
+        <script type="text/javascript" src="./assets/js/connexion.js"></script>
+        <script type="text/javascript" src="./assets/js/modal.js"></script>
+        <script type="text/javascript" src="./assets/js/produit.js"></script>
+        <script src="https://kit.fontawesome.com/a8264338ad.js" crossorigin="anonymous"></script>
+    </body>
 </html>
