@@ -27,7 +27,6 @@ function afficherProduit(data) {
 
     // Récupération du produit
     const produit = data;
-    console.log(data);
 
     // Si il n'y a pas de produit correspondant à l'ID récupéré
     if (produit.name === 'CastError' || produit.name === undefined) {

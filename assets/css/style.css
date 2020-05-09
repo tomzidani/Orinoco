@@ -1,3 +1,10 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v7.0.29,
+* Autoprefixer: v9.7.6
+* Browsers: last 4 version
+*/
+
 @import url("https://fonts.googleapis.com/css?family=Playfair+Display&display=swap");
 * {
   font-family: 'Playfair Display';
@@ -45,12 +52,16 @@ header {
       header > nav {
         float: none; } }
     header > nav > ul {
+      display: -webkit-box;
+      display: -ms-flexbox;
       display: flex;
       list-style: none;
       padding: 0; }
       @media only screen and (max-width: 767px) {
         header > nav > ul {
-          justify-content: center;
+          -webkit-box-pack: center;
+              -ms-flex-pack: center;
+                  justify-content: center;
           margin: 0; } }
       header > nav > ul > li {
         margin-left: 50px; }
@@ -63,6 +74,8 @@ header {
   color: #fff;
   background-color: #000;
   text-align: center;
+  -webkit-transition: ease-in-out .2s;
+  -o-transition: ease-in-out .2s;
   transition: ease-in-out .2s;
   cursor: pointer; }
   .btn:hover {
@@ -78,17 +91,25 @@ footer {
   margin-top: 30px; }
   footer > ul {
     list-style: none;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center; }
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center; }
     footer > ul > li {
       margin-right: 20px; }
   footer > p {
     text-align: center; }
     footer > p > i {
       color: #e83737;
+      -webkit-transition: ease-in-out .2s;
+      -o-transition: ease-in-out .2s;
       transition: ease-in-out .2s; }
       footer > p > i:hover {
-        transform: scale(1.2); }
+        -webkit-transform: scale(1.2);
+            -ms-transform: scale(1.2);
+                transform: scale(1.2); }
 
 .panorama {
   width: 100%;
@@ -117,7 +138,11 @@ footer {
     border: solid 1px #f0f0f0;
     height: 200px;
     margin: 0 auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-transition: ease-in-out .2s;
+    -o-transition: ease-in-out .2s;
     transition: ease-in-out .2s; }
     @media only screen and (max-width: 767px) {
       .produits > .produit-field > a > .produit {
@@ -162,6 +187,8 @@ footer {
 
 .produit-page {
   width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex; }
   @media only screen and (max-width: 767px) {
     .produit-page {
@@ -191,6 +218,8 @@ footer {
     margin-top: 10px; }
     .produit-page > .prix:hover {
       opacity: 0.7;
+      -webkit-transition: ease-in-out .2s;
+      -o-transition: ease-in-out .2s;
       transition: ease-in-out .2s; }
     @media only screen and (max-width: 767px) {
       .produit-page > .prix {
@@ -288,7 +317,8 @@ footer {
       padding: 7px;
       border: solid 1px #000;
       width: 100%;
-      box-sizing: border-box;
+      -webkit-box-sizing: border-box;
+              box-sizing: border-box;
       margin-bottom: 10px;
       font-size: 16px; }
     .modal > .formulaire-panier input.erreur {
@@ -298,6 +328,8 @@ footer {
   max-height: 550px;
   overflow: scroll; }
 .panier .produit-panier {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   border-bottom: solid 1px #f0f0f0;
   padding: 15px; }
@@ -341,5 +373,3 @@ footer {
     margin-bottom: 15px; }
   .panier > .commande-panier > .btn {
     padding: 10px; }
-
-/*# sourceMappingURL=style.css.map */
